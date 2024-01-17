@@ -9,13 +9,16 @@ public class CreateFile {
 
     public static void Create(String forderPath) throws IOException {
         System.out.print("파일 이름 입력: ");
-        String fileInput= sc.next();
+        String fileInput=null;
+        fileInput=sc.next();
         File file = new File(forderPath+fileInput+".txt");
+
         if(!file.exists()) {
             file.createNewFile();
-            System.out.println(fileInput+".txt 파일을 생성했습니다.");
+            System.out.println(fileInput+".txt 파일을 생성했습니다.\n");
         }else {
-            System.out.println("이미 존재합니다.");
+            System.out.println("이미 존재합니다.\n");
+            Create(forderPath);
         }
     }
 }
