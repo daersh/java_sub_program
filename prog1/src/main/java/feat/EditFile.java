@@ -1,9 +1,7 @@
 package feat;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
 import java.util.Scanner;
 
 public class EditFile {
@@ -14,14 +12,15 @@ public class EditFile {
         String file_name =sc.nextLine();
         File file = new File(forderPath+file_name+".txt");
         if(file.exists()){
-            EditFile(file);
+            Desktop.getDesktop().open(file);
+            //EditFile(file);
         }else{
             System.out.println("파일이 존재하지 않습니다.");
         }
     }
 
     private static void EditFile(File file) throws IOException {
-        System.out.println("파일에 원하는 문장들을 작성하세요. (quit: \'q!\')");
+        System.out.println("\n파일에 원하는 문장들을 작성하세요. (quit: \'q!\')");
         BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
         while (true){
             System.out.print("작성: ");

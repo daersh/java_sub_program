@@ -10,7 +10,7 @@ public class ScanFile {
         File dir = new File(forderPath);
 
         String[] file = dir.list();
-        System.out.println("           ** 파일 목록 **");
+        System.out.println("\n           ** 파일 목록 **");
         System.out.println("***********************************");
         for(String str: file){
             System.out.println(str);

@@ -38,7 +38,7 @@ public class Menu {
     private static void goNext() throws InterruptedException, IOException {
         switch (input){
             case 1:
-                CreateFile.Create(forderPath);
+                CreateFile.Create_Insert(forderPath);
                 show_menu();
                 break;
             case 2:

@@ -27,13 +27,13 @@ public class ReadFile {
     private static void ReadFile(File file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
 
-        System.out.println("           ** 파일내용 **");
+        System.out.println("\n           ** 파일내용 **");
         System.out.println("***********************************");
         String line = null;
         while ((line = reader.readLine()) != null){
             System.out.println(line);
         }
-        System.out.println("***********************************");
+        System.out.println("***********************************\n");
         reader.close();
     }
 }
