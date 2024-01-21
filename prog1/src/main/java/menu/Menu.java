@@ -6,8 +6,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
+
+    //설명. 폴더 경로
     private static String forderPath = "/Users/hyunwoolee/Documents/GitHub/java_sub_program/prog1/src/main/java/DATA/";
-    private static int input;
+
+    //설명. 메뉴
     public static void show_menu() throws InterruptedException, IOException {
         while(true) {
 
@@ -24,8 +27,10 @@ public class Menu {
         }
     }
 
+    //설명. 사용자 메뉴 입력
      static void insert() throws InterruptedException, IOException {
         Scanner sc = new Scanner(System.in);
+        int input=0;
         System.out.print("insert: ");
 
         try {
@@ -35,39 +40,33 @@ public class Menu {
             insert();
         }
 
-        goNext();
+        goNext(input);
     }
 
-    private static void goNext() throws InterruptedException, IOException {
+
+
+    // 설명. input값에 따른 실행할 기능
+    private static void goNext(int input) throws InterruptedException, IOException {
         switch (input){
             case 1:
                 CreateFile.Create_Insert(forderPath);
-//                show_menu();
                 break;
             case 2:
                 ScanFile.Scan(forderPath);
-//                show_menu();
                 break;
             case 3:
                 ReadFile.Read(forderPath);
-//                show_menu();
                 break;
             case 4:
                 EditFile.Edit(forderPath);
-//                show_menu();
                 break;
             case 5:
                 DeleteFile.Delete(forderPath);
-//                show_menu();
                 break;
             case 6:
                 System.out.println("프로그램을 종료합니다.");
                 Thread.sleep(2000);
                 System.exit(0);
-//            case 7:
-//                String [] cmd = {"/bin/sh ","-c"," vi "};
-//                Process p = Runtime.getRuntime().exec(cmd+forderPath+"abc.txt");
-//                break;
             default:
                 System.out.println("다시 입력.");
         }
