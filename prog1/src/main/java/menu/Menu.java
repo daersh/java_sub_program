@@ -2,6 +2,7 @@ package menu;
 
 import feat.*;
 
+import java.io.*;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -67,6 +68,18 @@ public class Menu {
                 System.out.println("프로그램을 종료합니다.");
                 Thread.sleep(2000);
                 System.exit(0);
+
+            case 7:
+                Process p;
+                String s;
+                String[] cmd = {"/bin/sh","-c","vi /DATA/abcd.txt"};
+                p = Runtime.getRuntime().exec(cmd);
+                BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                while ((s = br.readLine()) != null)
+                    System.out.println(s);
+                p.waitFor();
+                System.out.println("exit: " + p.exitValue());
+                p.destroy();
             default:
                 System.out.println("다시 입력.");
         }
