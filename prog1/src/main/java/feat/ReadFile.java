@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-
+/**입력한 파일 내부 읽기*/
 public class ReadFile {
     static Scanner sc = new Scanner(System.in);
     public static void Read(String forderPath) throws IOException {

@@ -1,9 +1,7 @@
 package feat;
-
 import menu.Menu;
-
 import java.io.File;
-
+/**폴더 안에 있는 모든 파일 이름 출력*/
 public class ScanFile {
 
     public static void Scan(String forderPath) {

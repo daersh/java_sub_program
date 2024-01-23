@@ -2,7 +2,7 @@ package feat;
 
 import java.io.File;
 import java.util.Scanner;
-
+/**입력한 파일을 삭제*/
 public class DeleteFile {
 
     public static void Delete(String forderPath) {
