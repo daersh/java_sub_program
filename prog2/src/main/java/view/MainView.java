@@ -10,12 +10,11 @@ import java.awt.event.ActionListener;
 public class MainView extends JFrame{
     private static MainView instance = new MainView();
     //private static JButton b1 = new JButton("button1");
-
-    public static MainView  get_instance(){
+    public static MainView getInstance(){
         return instance;
     }
 
-    MainView(){
+    public MainView(){
         setTitle("Main menu");
         JPanel panel = new JPanel(new BorderLayout(2,2));
 
@@ -74,6 +73,12 @@ public class MainView extends JFrame{
         LeftPanel.add(leftbutton3,BorderLayout.SOUTH);
         LeftPanel.add(leftbutton4,BorderLayout.NORTH);
         LeftPanel.add(leftbutton5,BorderLayout.CENTER);
+
+        Click(leftbutton1,"clicked");
+        Click(leftbutton2,"clicked");
+        Click(leftbutton3,"clicked");
+        Click(leftbutton4,"clicked");
+        Click(leftbutton5,"clicked");
     }
 
     private static void makeMainPanel(JPanel MainPanel, JPanel LeftPanel, JPanel RightPanel, JPanel UpPanel, JPanel DownPanel, JPanel CenterPanel) {
@@ -84,12 +89,12 @@ public class MainView extends JFrame{
         MainPanel.add(CenterPanel,BorderLayout.CENTER);
     }
 
-    private static void b1Click(JButton b, JLabel l) {
+    private static void Click(JButton b, String a) {
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("clicked");
-                l.setText("1");
+                b.setText(a);
             }
         });
     }
