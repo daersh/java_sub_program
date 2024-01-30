@@ -15,7 +15,9 @@ static USERDTO user = null;
     public static void main(String[] args) {
 //        testLoginCLI();
         LoginWindow.OnLoginWindow();
+
     }
+
 
     private static void testLoginCLI() {
         while (true) {

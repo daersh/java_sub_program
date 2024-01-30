@@ -46,7 +46,7 @@ public class LoginWindow {
         l1_2.setBounds(20,75,80,30);
         value.setBounds(100,75,100,30);
         b1_1.setBounds(100,120,80,30);
-        l3.setBounds(100,200,80,30);
+        l3.setBounds(100,200,160,30);
         b1_2.setBounds(100,160,80,30);
 
         f.add(l1_1);
@@ -60,6 +60,7 @@ public class LoginWindow {
         f.setLayout(null);
         f.setVisible(true);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setResizable(false);
     }
 
     private static void make_f2(JFrame f2, JLabel l2_1, JTextField text2, JLabel l2_2, JPasswordField value2, JButton b2_1, JLabel l2_3) {
@@ -74,7 +75,7 @@ public class LoginWindow {
 
         b2_1.setBounds(100,120,80,30);
 
-        l2_3.setBounds(100,160,80,30);
+        l2_3.setBounds(100,160,160,30);
 
         f2.add(l2_1);
         f2.add(l2_2);
@@ -85,6 +86,7 @@ public class LoginWindow {
         f2.setLayout(null);
         f2.setVisible(false);
         f2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f2.setResizable(false);
     }
 
     private static void b2_1click(JButton b2_1, JTextField text2, JPasswordField value2, JLabel l2_3, JFrame f2, JFrame f) {
@@ -128,11 +130,11 @@ public class LoginWindow {
                 user = userService.Login(id,pw);
 
                 if(user !=null){
-                    l3.setText("Login!");
+                    l3.setText("Login success!");
                     UserService.changeUser(user);
                     //설명. 다음 창 이동할 곳 결정 필요
 
-                    f.setVisible(false);
+                    //f.setVisible(false);
                 }else{
                     l3.setText("Not correct..");
                 }
