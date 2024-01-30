@@ -11,11 +11,11 @@ public class Application {
 
     private static final UserService userService = new UserService();
 static USERDTO user = null;
-
+    //로그아웃 추가 필요....
+    // 내일 예정...
     public static void main(String[] args) {
-//        testLoginCLI();
-        LoginWindow.OnLoginWindow();
-
+        testLoginCLI();
+        //LoginWindow.OnLoginWindow();
     }
 
 
