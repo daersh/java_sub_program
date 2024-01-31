@@ -9,7 +9,6 @@ public class UserService {
 
     public static void changeUser(USERDTO changedUser) {
         user = changedUser;
-
     }
 
     public USERDTO Login(String id, String pw) {

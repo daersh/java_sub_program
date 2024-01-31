@@ -2,22 +2,29 @@ package run;
 
 
 import DTO.USERDTO;
+import service.LobbyService;
 import service.UserService;
 import view.LoginWindow;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Application {
 
     private static final UserService userService = new UserService();
 static USERDTO user = null;
+
+    public static void setUser(USERDTO user) {
+        Application.user = user;
+    }
+
     //로그아웃 추가 필요....
     // 내일 예정...
     public static void main(String[] args) {
         testLoginCLI();
-        //LoginWindow.OnLoginWindow();
+//        LoginWindow.OnLoginWindow();
     }
-
 
     private static void testLoginCLI() {
         while (true) {
@@ -31,7 +38,10 @@ static USERDTO user = null;
             int input = sc.nextInt();
             if (selectMenu(input) == 1) {
                 System.out.println("Link start");
-                LoginWindow.OnLoginWindow();
+//                LoginWindow.OnLoginWindow();
+//                LobbyCLI();
+                LobbyService lobbyService = new LobbyService();
+                lobbyService.Lobby(user);
             }
         }
     }

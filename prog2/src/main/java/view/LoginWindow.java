@@ -1,6 +1,7 @@
 package view;
 
 import DTO.USERDTO;
+import run.Application;
 import service.UserService;
 
 import javax.swing.*;
@@ -11,7 +12,6 @@ import java.awt.event.ActionListener;
 
 public class LoginWindow {
     private static UserService userService = new UserService();
-
     public static void OnLoginWindow(){
         JFrame f =new JFrame("로그인 창");
         JLabel l1_1 = new JLabel("User:");
@@ -66,17 +66,11 @@ public class LoginWindow {
     private static void make_f2(JFrame f2, JLabel l2_1, JTextField text2, JLabel l2_2, JPasswordField value2, JButton b2_1, JLabel l2_3) {
         f2.setSize(400,300);
         l2_1.setBounds(20,20,80,30);
-
         text2.setBounds(100,20,100,30);
-
         l2_2.setBounds(20,75,80,30);
-
         value2.setBounds(100,75,100,30);
-
         b2_1.setBounds(100,120,80,30);
-
         l2_3.setBounds(100,160,160,30);
-
         f2.add(l2_1);
         f2.add(l2_2);
         f2.add(l2_3);
@@ -128,15 +122,14 @@ public class LoginWindow {
                 String id = text.getText();
                 String pw = new String(value.getPassword());
                 user = userService.Login(id,pw);
+                Application.setUser(user);
 
-                if(user !=null){
+                if(user!=null) {
                     l3.setText("Login success!");
                     UserService.changeUser(user);
                     //설명. 다음 창 이동할 곳 결정 필요
 
-                    //f.setVisible(false);
-                }else{
-                    l3.setText("Not correct..");
+                    f.setVisible(false);
                 }
             }
         });
